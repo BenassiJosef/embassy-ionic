@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+
+      <ion-content class="card-background-page">
+
+          <ion-card  *ngFor="let event of eventItems"  (click)="openItem(event)">
+            <img src="{{event.fields.photo.fields.file.url}}"/>
+        
+          </ion-card>
+
+  <!-- <ion-card *ngFor="let event of eventItems"  (click)="openItem(event)">
+    <img src="{{event.fields.photo.fields.file.url}}"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{ event.fields.name }}
+        </ion-card-title>
+      <p>
+        The most popular industrial group ever, and largely
+        responsible for bringing the music to a mass audience.
+      </p>
+    
+
+    </ion-card-content>
+  </ion-card> -->
+</ion-content>
+
+
